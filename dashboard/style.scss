@@ -3,15 +3,23 @@
 body{
     font-family: 'Poppins', sans-serif;
     background: #FAFBFF;
+    box-sizing: border-box;
 }
-
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
 .logo {
     display: flex;
     align-items: center;
     &__image{
-        width: 100%;
+        width: 37px;
         height: auto;
-        max-width: 37px;
     }
     &__text{
         color: #000;
@@ -34,28 +42,24 @@ body{
 .sidebar {
     height: 100vh;
     position: fixed;
-    width: 18%;
-    max-width: 306px;
     top: 0;
     background-color: #fff;
+    box-shadow: 0px 10px 60px 0px rgba(226, 236, 249, 0.50);
     z-index: 3;
-    padding: 28px 36px;
-    height: 90vh;
-    max-width: 350px;
+    padding: 0 28px;
     display: flex;
     flex-direction: column;
-
+    &__logo{
+        margin-top: 37px;
+    }
     .list {
         list-style-type: none;
-        padding: 0;
-        margin-top: 52px;
+        margin-top: 65px;
         &__item{
             display: flex;
-            width: 100%;
-            min-width: 46px;
-            max-width: 250px;
+            width: 250px;
             height: 46px;
-            align-items: center;
+            
             margin-top: 18px;
             .menu-item {
                 width: 100%;
@@ -98,6 +102,7 @@ body{
     }
     &__user {
         margin-top: auto;
+        margin-bottom: 76px;
     }
     .user{
         display: flex;
@@ -129,9 +134,9 @@ body{
 }
 
 .customers {
-    margin-left: calc(20% + 70px);
-    margin-bottom: 150px;
-    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 968px;
     &__h2{
         margin-top: 36px;
         color: #000;
@@ -189,9 +194,9 @@ body{
     }
     &__table {
         margin-top: 47px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        max-width: 968px;
+        // overflow-x: auto;
+        // -webkit-overflow-scrolling: touch;
+        max-width: 888px;
 
         .table-body {
             width: 100%;
@@ -230,7 +235,7 @@ body{
                 display: flex;
                 justify-content: end;
             }
-            .btn-status{
+            .status-flag{
                 display: flex;
                 width: 80px;
                 padding: 4px 12px;
@@ -321,83 +326,46 @@ body{
     height: auto;
     z-index: 1;
 }
-.closebtn{
-    position: absolute;
-    top: 6px;
-    left: 95px;
-    cursor: pointer;
-    display: none;
-}
-.sidebar-hide{
-    transform: translateX(-100px);
-}
-.sidebar-show{
-    transform: translate(0);
-}
 @media (max-width: 1150px){
-    .sidebar{
-        width: 10%;
-        min-width: 120px;
-    }
     .logo{
         justify-content: center;
+        &__text{
+            display: none;
+        }
+        &__version{
+            display: none;
+        }
     }
-    .logo-text{
+    .menu-item{
+        &__chevron{
+            display: none;
+        }
+        &__text{
+            display: none;
+        }
+    }
+    .user__desc{
         display: none;
     }
-    .logo-version{
-        display: none;
+    .customers{
+        &__h2{
+            text-align: center;
+        }
     }
-    .item__chevron{
-        display: none;
-    }
-    .item__text{
-        display: none;
-    }
-    .user-desc{
-        display: none;
-    }
-    .section-customer{
-        margin-left: 130px;
-    }
-    .all-customers__upper{
+    .product__head{
         align-items: baseline;
-    }
-    .customers__h2{
-        text-align: center;
-    }
-    .customers__all-customers-text{
-        transform: translateY(12px);
+        &-text{
+            transform: translate
+        }
     }
     .pagination{
         justify-content: center;
-        margin-top: 34px;
     }
     
 }
 @media (max-width: 850px){
-    .sidebar__user{
-        justify-content: center;
-    }
-    .pagination {
-        justify-content: center;
-    }
-    form.nosubmit {
-        align-self: center;
-    }
+    
 }
 @media (max-width: 650px){
-    .customers__h2{
-        transform: translateY(10px);
-    }
-    .sidebar{
-        display: none;
-    }
-    .product__head{
-        flex-direction: column;
-        gap: 15px;
-    }
-    .product{
-        margin-left: 10px;
-    }
+    
 }

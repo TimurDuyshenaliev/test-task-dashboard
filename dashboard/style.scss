@@ -39,19 +39,17 @@ body{
     top: 0;
     background-color: #fff;
     z-index: 3;
-    &-container{
-        padding: 28px 36px;
-        height: 90vh;
-        max-width: 350px;
-        display: flex;
-        flex-direction: column;
-    }
-    &__nav-links__list {
+    padding: 28px 36px;
+    height: 90vh;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+
+    .list {
         list-style-type: none;
         padding: 0;
         margin-top: 52px;
-
-        .list__item{
+        &__item{
             display: flex;
             width: 100%;
             min-width: 46px;
@@ -59,85 +57,88 @@ body{
             height: 46px;
             align-items: center;
             margin-top: 18px;
+            .menu-item {
+                width: 100%;
+                color: #9197B3;
+                font-size: 14px;
+                font-family: Poppins;
+                font-weight: 500;
+                letter-spacing: -0.14px;
+                text-decoration: none;
+                transition: 0.3s ease-in-out;
+                display: flex;
+                align-items: center;
+                padding: 0 8px 0 0;
+                &:hover{
+                    text-decoration: none;
+                    color: #5932EA;
+                }
+                &__icon {
+                    margin-left: 11px;
+                }
+                &__text {
+                    margin-left: 10px;
+                }
+                &__chevron {
+                    margin-left: auto;
+                }
+            }
             &-active{
                 border-radius: 8px;
-                background: #5932EA;    
+                background: #5932EA;  
+                a span{
+                    color: #FFF;
+                    transition: 0.3s ease-in-out;
+                }
+                .menu-item__chevron{
+                    filter: invert(0%) sepia(0%) saturate(392%) hue-rotate(354deg) brightness(608%) contrast(191%);
+                }
+            }
+        }
+    }
+    &__user {
+        margin-top: auto;
+    }
+    .user{
+        display: flex;
+        flex-direction: row;
+        height: 42px;
+        align-items: center;
+        &__image{
+            width: 42px;
+            object-fit: cover;
+        }
+        &__desc{
+            display: flex;
+            flex-direction: column;
+            margin-left: 12px;
+            font-family: Poppins;
+            font-weight: 500;
+            letter-spacing: 0.14px;
+            &-name{
+                color: #000;
+                font-size: 14px;
+            }
+            &-job-title{
+                color: #757575;
+                font-size: 12px;
+                margin-top: 7px;
             }
         }
     }
 }
 
-.list__item-active a span{
-    color: #FFF;
-    transition: 0.3s ease-in-out;
-}
-.list__item-active .item .item__chevron{
-    filter: invert(0%) sepia(0%) saturate(392%) hue-rotate(354deg) brightness(608%) contrast(191%);
-}
-.item {
-    width: 100%;
-    color: #9197B3;
-    font-size: 14px;
-    font-family: Poppins;
-    font-weight: 500;
-    letter-spacing: -0.14px;
-    text-decoration: none;
-    transition: 0.3s ease-in-out;
-    display: flex;
-    align-items: center;
-    padding: 0 8px 0 0;
-    &:hover{
-        text-decoration: none;
-        color: #5932EA;
-    }
-    &__icon {
-        margin-left: 11px;
-    }
-    &__text {
-        margin-left: 10px;
-    }
-    &__chevron {
-        margin-left: auto;
-    }
-}
-
-
-.sidebar__user {
-    display: flex;
-    height: 42px;
-    margin-top: auto;
-    align-items: center;
-}
-.user-desc {
-    margin-left: 12px;
-}
-.user-desc__name {
-    color: #000;
-    font-size: 14px;
-    font-family: Poppins;
-    font-weight: 500;
-    letter-spacing: 0.14px;
-    
-}
-.user-desc__job-title{
-    color: #757575;
-    font-size: 12px;
-    font-family: Poppins;
-    letter-spacing: 0.12px;
-    margin-top: 7px;
-}
-.section-customer {
+.customers {
     margin-left: calc(20% + 70px);
     margin-bottom: 150px;
     max-width: 968px;
-}
-.section-customer__h2 {
-    margin-top: 36px;
-    color: #000;
-    font-size: 24px;
-    font-family: Poppins;
-    font-weight: 500;
-
+    &__h2{
+        margin-top: 36px;
+        color: #000;
+        font-size: 24px;
+        font-weight: 500;
+    }
+    
 }
 .section-customer__all-customers {
     margin-top: 55px;

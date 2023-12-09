@@ -6,14 +6,12 @@ function openSideBar() {
   openBtn.onclick = function () {
       sidebar.style.display = "block";
       closeBtn.style.display = "block";
-
   }
 
   closeBtn.onclick = function () {
       sidebar.style.display = "none";
       closeBtn.style.display = "block";
   }
-
 
   function closeSide() {
 

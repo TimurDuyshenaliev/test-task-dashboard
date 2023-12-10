@@ -280,20 +280,14 @@ html, body{
         margin-right: 12px;
     }
     .page-link {
-        display: inline-flex;
+        display: block;
         padding: 6px 9px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
         border-radius: 4px;
         border: 1px solid #EEE;
         background: #F5F5F5;
         color: #404B52;
         font-size: 12px;
-        font-family: Poppins;
         font-weight: 500;
-        line-height: 100%;
         letter-spacing: -0.12px;
         text-decoration: none;
     }
@@ -456,5 +450,8 @@ html, body{
     .product__showing-data{
         text-align: center;
         margin-top: 16px;
+    }
+    .pagination .page-link{
+        padding: 4px 6px;
     }
 }

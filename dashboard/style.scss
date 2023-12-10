@@ -15,7 +15,6 @@ html, body{
     &__text{
         color: #000;
         font-size: 26px;
-        font-family: Poppins;
         font-weight: 600;
         letter-spacing: 0.26px;
         margin: 0;
@@ -23,7 +22,6 @@ html, body{
     &__version {
         color: #838383;
         font-size: 10px;
-        font-family: Poppins;
         font-weight: 500;
         letter-spacing: -0.1px;
         transform: translate(3px, 5px);
@@ -34,7 +32,7 @@ html, body{
     flex-direction: row;
     gap: 71px;
     height: 1198px;
-    padding-right: 60px;
+    padding-right: 95px;
 }
 .sidebar {
     height: 100%;
@@ -189,16 +187,19 @@ html, body{
     &__table {
         margin-top: 47px;
         max-width: 968px;
-        table{
+        .table{
             width: 100%;
             font-size: 14px;
             font-weight: 500;
             letter-spacing: -0.14px;
             text-overflow: ellipsis;
             text-wrap: nowrap;
-            thead{
+            &__row{
                 border-bottom: #EEE 1px solid;
-                th{
+            }
+            &-head{
+                border-bottom: #EEE 1px solid;
+                &__text{
                     color: #B5B7C0;            
                     text-align: start;
                     padding-bottom: 14px;
@@ -211,11 +212,8 @@ html, body{
                     }
                 }
             }
-            tbody{
-                tr{
-                    border-bottom: #EEE 1px solid;
-                }
-                td{
+            &-content{
+                &__data{
                     color: #292D32;
                     padding: 24px 0;
                     height: 21px;
@@ -367,48 +365,47 @@ html, body{
         border-radius: 0 0 10px 0;
     }
     .product__table{
-        table{
-            thead{
+        .table{
+            &-head{
                 display: none;
             }
-            tbody{
-                tr{
-                    display: block;
-                    margin-left: auto;
-                    margin-right: auto;
-                    width: 90%;
-                    border-radius: 10px;
-                    border: 1px solid #ececec;
-                    background-color: #FFFFFF;
-                    filter: drop-shadow(0px 10px 60px rgba(226, 236, 249, 0.50));
-                    &:not(:first-child){
-                        margin-top: 14px;
+            &-content{
+                &__data {
+                    border-bottom: 1px solid #ececec;
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 14px;
+                    text-align: right;
+                    padding: 12px 24px;
+                    align-items: center;
+                    &::before {
+                        content: attr(data-label);
+                        float: left;
+                        font-weight: bold;
                     }
-                    td {
-                        border-bottom: 1px solid #ececec;
-                        display: flex;
+                    &:first-child{
+                        padding-left: 24px;
+                    }
+                    &:last-child{
+                        border-bottom: none;
+                        padding-right: 24px;
                         justify-content: space-between;
-                        font-size: 14px;
-                        text-align: right;
-                        padding: 12px 24px;
-                        align-items: center;
-                        &::before {
-                            content: attr(data-label);
-                            float: left;
-                            font-weight: bold;
-                        }
-                        &:first-child{
-                            padding-left: 24px;
-                        }
-                        &:last-child{
-                            border-bottom: none;
-                            padding-right: 24px;
-                            justify-content: space-between;
-                        }
                     }
                 }
+            } 
+        }
+        .table__row{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+            border-radius: 10px;
+            border: 1px solid #ececec;
+            background-color: #FFFFFF;
+            filter: drop-shadow(0px 10px 60px rgba(226, 236, 249, 0.50));
+            &:not(:first-child){
+                margin-top: 14px;
             }
-            
         }
     }
     
